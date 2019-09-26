@@ -27,6 +27,8 @@ class CompleteTaskController
         $updateTaskCheck = TaskFormValidator::validateTaskID($post);
         if ($updateTaskCheck) {
             $this->tasksModel->updateCompletedTasks($post);
+        } else {
+            echo "this should not have happened!";
         }
 
         // $this->renderer->render($response, 'completeTask.phtml');

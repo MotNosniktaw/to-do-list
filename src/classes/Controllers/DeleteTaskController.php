@@ -27,6 +27,8 @@ class DeleteTaskController
         $deleteTaskCheck = TaskFormValidator::validateTaskID($post);
         if ($deleteTaskCheck) {
             $this->tasksModel->deleteCompletedTasks($post);
+        } else {
+            echo "this should not have happened!";
         }
 
         // $this->renderer->render($response, 'deleteTask.phtml');

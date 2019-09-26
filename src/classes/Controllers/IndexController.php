@@ -26,6 +26,8 @@ class IndexController
         $deleteTaskCheck = TaskFormValidator::validateTaskID($post);
         if ($deleteTaskCheck) {
             $this->taskModel->deleteCompletedTasks($post);
+        } else {
+            echo "this should not have happened!";
         }
 
         $completedTasks = [$this->taskModel->getCompletedTasks()];
