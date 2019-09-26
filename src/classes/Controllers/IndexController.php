@@ -19,7 +19,7 @@ class IndexController
         $this->taskModel = $taskModel;
     }
 
-    public function __invoke(Request $request, Response $response, array $args)
+    public function __invoke(Request $request, Response $response)
     {
         $post = $request->getParsedBody();
 
