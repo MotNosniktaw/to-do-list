@@ -18,12 +18,13 @@ class GetTaskController
     public function __invoke(Request $request, Response $response)
     {
         $data = [];
-        $data['uncompleted'] = $this->taskModel->getUncompletedTasks();
-        $data['completed'] = $this->taskModel->getCompletedTasks();
+        $uncompleted = $this->taskModel->getUncompletedTasks();
+        $completed = $this->taskModel->getCompletedTasks();
+        $data['uncompleted'] = $uncompleted;
+        $data['completed'] = $completed;
         var_dump($data);
 
-
-        $response->withJSON($data);
+        return $response->withJSON($data);
     }
 
 }
