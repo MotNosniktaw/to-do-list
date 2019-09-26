@@ -1,5 +1,10 @@
 <?php
 
+use Example\Factories\TasksControllerFactory;
+use Example\Factories\TasksModelFactory;
+use Example\Factories\AddTaskControllerFactory;
+use Example\Factories\CompleteTaskControllerFactory;
+use Example\Factories\DeleteTaskControllerFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -19,5 +24,20 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
+
+    $container['db'] = function ($container) {
+        $settings = $container->get('settings')['db'];
+        $db = new \PDO('mysql:host=' . $settings['host'] . ';dbname=' . $settings['dbname'], $settings['username'], $settings['password']);
+        return $db;
+    };
+
+    $container['TasksController'] = new TasksControllerFactory;
+    $container['TasksModel'] = new TasksModelFactory;
+
+    $container['AddTaskController'] = new AddTaskControllerFactory;
+
+    $container['CompleteTaskController'] = new CompleteTaskControllerFactory;
+
+    $container['DeleteTaskController'] = new DeleteTaskControllerFactory;
 
 };

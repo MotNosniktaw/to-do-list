@@ -1,3 +1,66 @@
-* {
-    color: red;
+body {
+    margin: 50px 0 0 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #aaa;
+    font-size: 62.5%;
+}
+
+h1 {
+    color: #719e40;
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 5rem;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.new-task-input {
+    height: 50px;
+    width: 300px;
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+.list-item span {
+    width: 600px;
+    position: absolute;
+    left: 50px;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.list-item {
+    font-size: 1.5rem;
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.button {
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    float: right;
+    font-size: 1rem;
+}
+
+.new-button {
+    background-color: rgb(131, 185, 131);
+}
+
+.complete-button {
+    background-color: rgb(245, 169, 83);
+}
+
+.delete-button {
+    background-color: rgb(250, 101, 101);
 }
