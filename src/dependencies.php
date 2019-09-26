@@ -31,13 +31,11 @@ return function (App $app) {
         return $db;
     };
 
-    $container['IndexController'] = new IndexControllerFactory;
     $container['TasksModel'] = new TasksModelFactory;
-
+    
+    $container['IndexController'] = new IndexControllerFactory;
     $container['AddTaskController'] = new AddTaskControllerFactory;
-
     $container['CompleteTaskController'] = new CompleteTaskControllerFactory;
-
     $container['DeleteTaskController'] = new DeleteTaskControllerFactory;
 
 };
