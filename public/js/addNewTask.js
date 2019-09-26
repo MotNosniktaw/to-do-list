@@ -23,5 +23,4 @@ newTaskForm.addEventListener('submit', async function (event) {
 
     populateToDoList();
 
-
 })
