@@ -6,6 +6,7 @@
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <script defer src="js/addNewTask.js"></script>
+        <script defer src="js/buildList.js"></script>
     </head>
     <body>
         <div class="container">
@@ -16,11 +17,9 @@
             </form>
             <h3>A list of things to do:</h3>
             <form id="complete-task-form" action="/complete-task" method="post" name="to-do">
-                <? echo Example\ViewHelpers\TasksViewHelper::displayUncompletedTasks($uncompletedTasks[0]); ?>
             </form>
             <h3>A list of things I have done:</h3>
             <form id="delete-task-form" action="/delete-task" method="post" name="done">
-                <? echo Example\ViewHelpers\TasksViewHelper::displayCompletedTasks($completedTasks[0]); ?>
             </form>
         </div>
     </body>
