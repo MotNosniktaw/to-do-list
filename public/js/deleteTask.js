@@ -1,11 +1,10 @@
-let deleteTaskForm = document.getElementById('delete-task-form')
+let deleteTaskForm = document.querySelectorAll('.delete-button')
 
-deleteTaskForm.addEventListener('submit', async function (event) {
+deleteTaskForm.forEach( function (element) {
+    element.addEventListener('submit', async function (event) {
     event.preventDefault()
 
-    console.log(deleteTaskForm['task-id'].value)
-
-    let data = {'task-id': deleteTaskForm['task-id'].value}
+    let data = {'task-id': deleteTaskForm}
 
     let output = {
         method: 'POST',
@@ -23,4 +22,5 @@ deleteTaskForm.addEventListener('submit', async function (event) {
 
     populateDoneList();
 
+})
 })

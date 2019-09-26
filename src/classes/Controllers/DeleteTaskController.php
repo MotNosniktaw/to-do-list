@@ -33,7 +33,9 @@ class DeleteTaskController
 
         // $this->renderer->render($response, 'deleteTask.phtml');
 
-        return $response->withRedirect('/');
+        // return $response->withRedirect('/');
+
+        return $response->withJSON(['success' => true]);
 
     }
 }

@@ -20,6 +20,8 @@ async function populateDoneList() {
         let json = await response.json()
         let completed = json['completed']
 
+        document.getElementById('delete-task-form').innerHTML = ''
+
         completed.forEach(function (task) {
             document.getElementById('delete-task-form').innerHTML += '<div class="list-item"><span>' + task['task'] + '</span><button class="delete-button button" type=submit name="task-id" value="' + task['id'] + '">Delete</button></div>'
         })

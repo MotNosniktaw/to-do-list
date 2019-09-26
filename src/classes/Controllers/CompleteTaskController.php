@@ -35,7 +35,7 @@ class CompleteTaskController
 
         // return $response->withRedirect('/');
 
-        return $response->withJSON(['success' => 'true']);
+        return $response->withJSON(['success' => true]);
     }
 
 }
