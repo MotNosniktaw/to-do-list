@@ -1,9 +1,7 @@
 async function populateToDoList() {
     try {
         let response = await fetch('/get-task', {headers: {'Content-type': 'application/json'}})
-        console.log(response)
         let json = await response.json()
-        console.log(json)
         let uncompleted = json['uncompleted']
 
         document.getElementById('complete-task-form').innerHTML = ''
@@ -19,11 +17,9 @@ async function populateToDoList() {
 async function populateDoneList() {
     try {
         let response = await fetch('/get-task', {headers: {'Content-type': 'application/json'}})
-        console.log(response)
         let json = await response.json()
-        console.log(json)
         let completed = json['completed']
-        console.log(completed)
+
         completed.forEach(function (task) {
             document.getElementById('delete-task-form').innerHTML += '<div class="list-item"><span>' + task['task'] + '</span><button class="delete-button button" type=submit name="task-id" value="' + task['id'] + '">Delete</button></div>'
         })
