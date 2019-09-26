@@ -22,7 +22,6 @@ class GetTaskController
         $completed = $this->taskModel->getCompletedTasks();
         $data['uncompleted'] = $uncompleted;
         $data['completed'] = $completed;
-        var_dump($data);
 
         return $response->withJSON($data);
     }
