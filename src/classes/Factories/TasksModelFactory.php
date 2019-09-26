@@ -10,7 +10,7 @@ class TasksModelFactory
     public function __invoke(ContainerInterface $container)
     {
         $db = $container->get('db');
-        $newTasksModel = new TasksModel($db);
-        return $newTasksModel;
+        
+        return new TasksModel($db);
     }
 }

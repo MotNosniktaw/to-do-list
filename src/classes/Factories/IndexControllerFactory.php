@@ -2,16 +2,17 @@
 
 namespace Example\Factories;
 
-use Example\Controllers\TasksController;
+use Example\Controllers\IndexController;
 use Psr\Container\ContainerInterface;
 
-class TasksControllerFactory
+class IndexControllerFactory
 {
     public function __invoke(ContainerInterface $container)
     {
         $renderer = $container->get('renderer');
         $model = $container->get('TasksModel');
-        $newTasksController = new TasksController($renderer, $model);
-        return $newTasksController;
+
+        return new IndexController($renderer, $model);
+
     }
 }

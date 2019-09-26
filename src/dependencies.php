@@ -1,6 +1,6 @@
 <?php
 
-use Example\Factories\TasksControllerFactory;
+use Example\Factories\IndexControllerFactory;
 use Example\Factories\TasksModelFactory;
 use Example\Factories\AddTaskControllerFactory;
 use Example\Factories\CompleteTaskControllerFactory;
@@ -31,7 +31,7 @@ return function (App $app) {
         return $db;
     };
 
-    $container['TasksController'] = new TasksControllerFactory;
+    $container['IndexController'] = new IndexControllerFactory;
     $container['TasksModel'] = new TasksModelFactory;
 
     $container['AddTaskController'] = new AddTaskControllerFactory;

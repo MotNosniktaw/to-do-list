@@ -7,9 +7,9 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/', 'TasksController');
+    $app->get('/', 'IndexController');
 
-    $app->post('/', 'TasksController');
+    $app->post('/', 'IndexController');
 
     $app->post('/add-task', 'AddTaskController');
     $app->post('/complete-task', 'CompleteTaskController');

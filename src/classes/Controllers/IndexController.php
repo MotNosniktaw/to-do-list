@@ -8,7 +8,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\PhpRenderer;
 
-class TasksController
+class IndexController
 {
     protected $renderer;
     protected $taskModel;
