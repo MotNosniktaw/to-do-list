@@ -27,12 +27,14 @@ class AddTaskController
         if ($newTaskCheck) {
             $this->tasksModel->addNewTask($post);
         } else {
-            echo "this should not have happened!";
+            // echo "this should not have happened!";
         }
 
         // $this->renderer->render($response, 'addNewTask.phtml');
 
-        return $response->withRedirect('/');
+        return $response->withJson($post);
+
+        // return $response->withRedirect('/');
     }
 
 }

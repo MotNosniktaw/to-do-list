@@ -5,20 +5,21 @@
         <title>Slim 3</title>
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <script defer src="js/addNewTask.js"></script>
     </head>
     <body>
         <div class="container">
             <h1>To-Do List</h1>
             <h3>New task:</h3>
-            <form action="/add-task" method="post">
+            <form id="new-task-form" action="/add-task" method="post">
                 <input class="new-task-input" name="new-task" type="text"><button class="new-button button" type="submit">Add</button></br>
             </form>
             <h3>A list of things to do:</h3>
-            <form action="/complete-task" method="post" name="to-do">
+            <form id="complete-task-form" action="/complete-task" method="post" name="to-do">
                 <? echo Example\ViewHelpers\TasksViewHelper::displayUncompletedTasks($uncompletedTasks[0]); ?>
             </form>
             <h3>A list of things I have done:</h3>
-            <form action="/delete-task" method="post" name="done">
+            <form id="delete-task-form" action="/delete-task" method="post" name="done">
                 <? echo Example\ViewHelpers\TasksViewHelper::displayCompletedTasks($completedTasks[0]); ?>
             </form>
         </div>
