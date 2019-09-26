@@ -21,15 +21,6 @@ class IndexController
 
     public function __invoke(Request $request, Response $response)
     {
-        $post = $request->getParsedBody();
-
-        $deleteTaskCheck = TaskFormValidator::validateTaskID($post);
-        if ($deleteTaskCheck) {
-            $this->taskModel->deleteCompletedTasks($post);
-        } else {
-            echo "this should not have happened!";
-        }
-
         $completedTasks = [$this->taskModel->getCompletedTasks()];
         $uncompletedTasks = [$this->taskModel->getUncompletedTasks()];
 
