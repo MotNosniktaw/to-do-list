@@ -12,6 +12,7 @@ async function populateToDoList() {
     } catch (error) {
         console.error(error)
     }
+    applyCompleteListeners()
 }
 
 async function populateDoneList() {
@@ -28,6 +29,7 @@ async function populateDoneList() {
     } catch (error) {
         console.error(error)
     }
+    applyDeleteListeners()
 }
 
 populateToDoList()

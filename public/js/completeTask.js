@@ -1,10 +1,15 @@
+function applyCompleteListeners() {
+
 let completeTaskForm = document.querySelectorAll('.complete-button')
 
 completeTaskForm.forEach( function (element) {
-    element.addEventListener('submit', async function (event) {
+    console.log(element)
+    element.addEventListener('click', async function (event) {
     event.preventDefault()
 
-    let data = {'task-id': completeTaskForm}
+    console.log(element.value)
+
+    let data = {'task-id': element.value}
 
     let output = {
         method: 'POST',
@@ -25,3 +30,4 @@ completeTaskForm.forEach( function (element) {
 
 })
 })
+}

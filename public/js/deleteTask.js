@@ -1,26 +1,29 @@
-let deleteTaskForm = document.querySelectorAll('.delete-button')
+function applyDeleteListeners() {
 
-deleteTaskForm.forEach( function (element) {
-    element.addEventListener('submit', async function (event) {
-    event.preventDefault()
+let deleteTaskButtons = document.querySelectorAll('.delete-button')
 
-    let data = {'task-id': deleteTaskForm}
+deleteTaskButtons.forEach( function (element) {
+    element.addEventListener('click', async function (event) {
+        event.preventDefault()
 
-    let output = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-    }
+        let data = {'task-id': element.value}
 
-    try {
-        let response = await fetch('/delete-task', output)
-        let json = await response.json()
-        console.log(json)
-    } catch (error) {
-        console.error(error)
-    }
+        let output = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }
 
-    populateDoneList();
+        try {
+            let response = await fetch('/delete-task', output)
+            let json = await response.json()
+            console.log(json)
+        } catch (error) {
+            console.error(error)
+        }
 
+        populateDoneList();
+
+    })
 })
-})
+}
