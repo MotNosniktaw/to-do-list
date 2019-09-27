@@ -28,12 +28,14 @@ class CompleteTaskController
         if ($updateTaskCheck) {
             $this->tasksModel->updateCompletedTasks($post);
         } else {
-            echo "this should not have happened!";
+            // echo "this should not have happened!";
         }
 
         // $this->renderer->render($response, 'completeTask.phtml');
 
-        return $response->withRedirect('/');
+        // return $response->withRedirect('/');
+
+        return $response->withJSON($post);
     }
 
 }
