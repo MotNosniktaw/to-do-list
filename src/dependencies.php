@@ -5,6 +5,7 @@ use Example\Factories\TasksModelFactory;
 use Example\Factories\AddTaskControllerFactory;
 use Example\Factories\CompleteTaskControllerFactory;
 use Example\Factories\DeleteTaskControllerFactory;
+use Example\Factories\GetTaskControllerFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -37,5 +38,6 @@ return function (App $app) {
     $container['AddTaskController'] = new AddTaskControllerFactory;
     $container['CompleteTaskController'] = new CompleteTaskControllerFactory;
     $container['DeleteTaskController'] = new DeleteTaskControllerFactory;
+    $container['GetTaskController'] = new GetTaskControllerFactory;
 
 };

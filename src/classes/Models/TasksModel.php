@@ -15,14 +15,14 @@ class TasksModel
     {
         $sql = 'SELECT `id`, `task` FROM `tasks` WHERE `completed` = 0 AND `deleted` = 0;';
         $query = $this->db->query($sql);
-        return $query->fetchAll();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function getCompletedTasks()
     {
         $sql = 'SELECT `id`, `task` FROM `tasks` WHERE `completed` = 1 AND `deleted` = 0;';
         $query = $this->db->query($sql);
-        return $query->fetchAll();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function addNewTask($data)
