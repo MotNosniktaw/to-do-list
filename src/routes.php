@@ -7,12 +7,12 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/', function (Request $request, Response $response, array $args) use ($container) {
-        // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/' route");
+    $app->get('/', 'IndexController');
+    $app->post('/', 'IndexController');
 
-        // Render index view
-        return $container->get('renderer')->render($response, 'index.phtml', $args);
-    });
+    $app->get('/get-task', 'GetTaskController');
+    $app->post('/add-task', 'AddTaskController');
+    $app->post('/complete-task', 'CompleteTaskController');
+    $app->post('/delete-task', 'DeleteTaskController');
 
 };
